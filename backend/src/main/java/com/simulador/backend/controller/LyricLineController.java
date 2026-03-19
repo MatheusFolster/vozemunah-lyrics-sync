@@ -17,7 +17,6 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/tracks/{trackId}/lyric-lines")
-@CrossOrigin(origins = "http://localhost:4200")
 public class LyricLineController {
 
     private final LyricLineService lyricLineService;

@@ -31,7 +31,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/tracks")
-@CrossOrigin(origins = "http://localhost:4200") // Permite requisições do Angular em dev
 public class TrackController {
 
     private final TrackService trackService;
@@ -95,7 +94,7 @@ public class TrackController {
 
     // ── POST /api/tracks/{id}/audio ───────────────────────────────────────────
     // Upload de arquivo de áudio. Salva em disco e atualiza a track.
-    @PostMapping("/{id}/audio")
+    @PutMapping("/{id}/audio")
     public ResponseEntity<TrackDTO> uploadAudio(
             @PathVariable Long id,
             @RequestParam("file") MultipartFile file) throws IOException {
